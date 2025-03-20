@@ -1,0 +1,79 @@
+<div class="main">
+  <div class="topbar">
+    <div class="toggle">
+      <ion-icon name="menu-outline"></ion-icon>
+    </div>
+
+    <div class="search">
+      <label>
+        <input
+          type="text"
+          placeholder="Search here"
+          [(ngModel)]="search"
+          (ngModelChange)="onSearchChange()"
+        />
+        <i class="bi bi-search-heart-fill icon"></i>
+      </label>
+    </div>
+
+    <div class="user">
+      <img src="assets/imgs/customer01.jpg" alt="" />
+    </div>
+  </div>
+
+  <!-- ================ Order Details List ================= -->
+  <div class="details">
+    <div class="recentOrders">
+      <div class="cardHeader">
+        <h2>All Users</h2>
+        <a href="#" class="btn" routerLink="/users/add">Add User</a>
+      </div>
+      <div class="success" *ngIf="loading">Loading Users From Store ...</div>
+      <table *ngIf="!loading">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Password</th>
+            <th>Role</th>
+            <th>Created_At</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr *ngFor="let user of users; let i = index">
+            <td>{{ user.id }}</td>
+            <td>{{ user.name | capitalize }}</td>
+            <td>{{ user.email }}</td>
+            <td>{{ user.password | hidePassword : "*" }}</td>
+            <td>{{ user.role }}</td>
+            <td>{{ user.created_at | date : "dd/MM/yyyy" }}</td>
+            <td>
+              <div class="actions">
+                <!-- <button (click)="editUserClick(user)">Edit</button> -->
+                <button class="status pending" (click)="editUserClick(user)">
+                  Edit
+                </button>
+                <button
+                  class="status delivered"
+                  routerLink="/users/details/{{ user.id }}"
+                >
+                  Details
+                </button>
+                <!-- <button  (click)="detailsUserClick(user)">Details</button> -->
+                <button
+                  class="status return"
+                  (click)="deleteUserClick(user, i)"
+                >
+                  Delete
+                </button>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

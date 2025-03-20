@@ -1,0 +1,18 @@
+<div class="navigation">
+  <ul>
+    <li
+      *ngFor="let item of menuItems; let i = index"
+      [ngClass]="{ hovered: activeIndex === i }"
+      (click)="setActive(i)"
+    >
+      <a [routerLink]="item.link">
+        <span class="icon">
+          <img *ngIf="item.img" [src]="item.img" alt="brandName" width="60px">
+          <i *ngIf="!item.img" [class]="item.icon"></i>
+        </span>
+        <span class="title" *ngIf="!item.img">{{ item.title }}</span>
+        <span class="brandTitle" *ngIf="item.img">{{ item.title }}</span>
+      </a>
+    </li>
+  </ul>
+</div>

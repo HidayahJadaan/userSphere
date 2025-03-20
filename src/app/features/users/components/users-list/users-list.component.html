@@ -1,0 +1,170 @@
+<!-- <div class="page-head">
+    <h3>Users List</h3>
+    <button routerLink="/users/add">Add New User</button>
+</div>
+<div class="success" *ngIf="loading">
+    Loading Users From Store ...
+</div>
+<table border="1" width="100%" *ngIf="!loading">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Password</th>
+      <th>Role</th>
+      <th>Created_At</th>
+      <th>Actions</th>
+
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let user of users; let i=index">
+      <td>{{ user.id }}</td>
+      <td>{{ user.name | capitalize}}</td>
+      <td>{{ user.email }}</td>
+      <td>{{ user.password | hidePassword:'*' }} </td>
+      <td>{{ user.role }}</td>
+      <td>{{ user.created_at | date : "dd/MM/yyyy" }}</td>
+    <td>
+        <div class="actions"> -->
+<!-- <button (click)="editUserClick(user)">Edit</button> -->
+<!-- <button (click)="editUserClick(user)">Edit</button> -->
+<!-- <button routerLink="/users/details/{{user.id}}">Details</button> -->
+<!-- <button  (click)="detailsUserClick(user)">Details</button> -->
+<!-- <button (click)="deleteUserClick(user, i)">Delete</button> -->
+<!-- </div>
+    </td>
+    </tr>
+  </tbody>
+</table> -->
+
+<div class="main">
+  
+  <!-- ======================= Cards ================== -->
+  <div class="cardBox">
+    <div class="card">
+      <div>
+        <div class="numbers">{{totalUsers}}</div>
+        <div class="cardName">Total Users</div>
+      </div>
+
+      <div class="iconBx">
+        <i class="bi bi-people-fill"></i>
+      </div>
+    </div>
+
+    <div class="card">
+      <div>
+        <div class="numbers">{{ backendCount }}</div>
+        <div class="cardName">Backend Dev</div>
+      </div>
+
+      <div class="iconBx">
+        <i class="bi bi-gear-wide-connected"></i>
+      </div>
+    </div>
+
+    <div class="card">
+      <div>
+        <div class="numbers">{{ frontendCount }}</div>
+        <div class="cardName">Frontend Dev</div>
+      </div>
+
+      <div class="iconBx">
+        <i class="bi bi-images"></i>
+      </div>
+    </div>
+    <div class="card">
+      <div>
+        <div class="numbers">{{ fullstackCount }}</div>
+        <div class="cardName">Full Stack Dev</div>
+      </div>
+
+      <div class="iconBx">
+        <i class="bi bi-hearts"></i>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================ Order Details List ================= -->
+  <div class="details">
+    <div class="recentOrders">
+      <div class="cardHeader">
+        <h2>Registerd Users</h2>
+        <a href="#" class="btn" routerLink="/users/add">Add User</a>
+      </div>
+      <div class="success" *ngIf="loading">Loading Users From Store ...</div>
+      <table *ngIf="!loading">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Password</th>
+            <th>Role</th>
+            <th>Created_At</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr *ngFor="let user of users; let i = index">
+            <td>{{ user.id }}</td>
+            <td>{{ user.name | capitalize }}</td>
+            <td>{{ user.email }}</td>
+            <td>{{ user.password | hidePassword : "*" }}</td>
+            <td>{{ user.role }}</td>
+            <td>{{ user.created_at | date : "dd/MM/yyyy" }}</td>
+            <td>
+              <div class="actions">
+                <!-- <button (click)="editUserClick(user)">Edit</button> -->
+                <button class="status pending" (click)="editUserClick(user)">
+                  Edit
+                </button>
+                <button
+                  class="status delivered"
+                  routerLink="/users/details/{{ user.id }}"
+                >
+                  Details
+                </button>
+                <!-- <button  (click)="detailsUserClick(user)">Details</button> -->
+                <button
+                  class="status return"
+                  (click)="deleteUserClick(user, i)"
+                >
+                  Delete
+                </button>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ================= New Customers ================ -->
+    <div class="recentCustomers">
+      <div class="cardHeader">
+        <h2>Recent Users</h2>
+      </div>
+
+      <div class="success" *ngIf="loading">Loading Recent Customers ...</div>
+      <table>
+        <tr *ngFor="let user of recentCustomers">
+          <td width="60px">
+            <div class="imgBx">
+              <img src="./assets/imgs/customer02.jpg" alt="" />
+            </div>
+          </td>
+          <td routerLink="/users/details/{{ user.id }}">
+            <h4>
+              {{ user.name }} <br />
+              <span>{{ user.email || "Unknown" }}</span>
+            </h4>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>

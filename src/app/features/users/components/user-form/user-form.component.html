@@ -1,0 +1,119 @@
+<!-- <div class="main">
+  <div class="details">
+
+  
+<div class="cardHeader">
+  <h2>{{ id ? "Edit" : "Add New" }} User</h2>
+
+  <div>
+    <a routerLink="/users/list">Users List</a>
+  </div>
+</div>
+
+<div class="user-form">
+  <div class="form">
+    <div>
+      <div class="success" *ngIf="loading">Saving User ...</div>
+      <div class="success" *ngIf="loadingForGet">Getting User Details ...</div>
+      <div class="success" *ngIf="success">{{ success }}</div>
+
+      <div class="error" *ngIf="errors.length">
+        <div *ngFor="let error of errors">
+          {{ error }}
+        </div>
+      </div>
+      <div class="form-control">
+        <label>Name: </label>
+        <input type="text" name="name" [(ngModel)]="name" />
+      </div>
+
+      <div class="form-control">
+        <label>Email Address: </label>
+
+        <input type="email" name="email" [(ngModel)]="email" />
+      </div>
+      <div class="form-control">
+        <label>Password: </label>
+
+        <input type="password" name="password" [(ngModel)]="password" />
+      </div>
+
+
+      
+    <div class="form-control">
+      <label>Role: </label>
+      <select name="role" [(ngModel)]="role">
+        <option value="" disabled selected>Select Role</option>
+        <option value="Frontend">Frontend Dev</option>
+        <option value="Backend">Backend Dev</option>
+        <option value="Full Stack">Full Stack Dev</option>
+      </select>
+    </div>
+    
+      <div class="form-control">
+        <button (click)="saveBtnClick()">Save</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+</div> -->
+
+<div class="main">
+  <div class="details">
+    <div class="recentOrders">
+      <div class="cardHeader">
+        <h2>{{ id ? "Edit" : "Add New" }} User</h2>
+        <a routerLink="/users/list" class="btn">Users List</a>
+      </div>
+
+      <div class="user-form">
+        <div class="form">
+          <div>
+            <div class="success" *ngIf="loading">Saving User ...</div>
+            <div class="success" *ngIf="loadingForGet">
+              Getting User Details ...
+            </div>
+            <div class="success" *ngIf="success">{{ success }}</div>
+
+            <div class="error" *ngIf="errors.length">
+              <div *ngFor="let error of errors">
+                {{ error }}
+              </div>
+            </div>
+            <div class="form-control">
+              <label>Name: </label>
+              <input type="text" name="name" [(ngModel)]="name" />
+            </div>
+
+            <div class="form-control">
+              <label>Email Address: </label>
+
+              <input type="email" name="email" [(ngModel)]="email" />
+            </div>
+            <div class="form-control">
+              <label>Password: </label>
+
+              <input type="password" name="password" [(ngModel)]="password" />
+            </div>
+
+            <div class="form-control">
+              <label>Role: </label>
+              <select name="role" [(ngModel)]="role">
+                <option value="" disabled selected>Select Role</option>
+                <option value="Frontend Dev">Frontend Dev</option>
+                <option value="Backend Dev">Backend Dev</option>
+                <option value="Full Stack Dev">Full Stack Dev</option>
+              </select>
+            </div>
+
+            <div class="form-control">
+              <button (click)="saveBtnClick()">Save</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

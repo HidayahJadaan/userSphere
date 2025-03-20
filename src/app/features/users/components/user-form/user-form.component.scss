@@ -1,0 +1,126 @@
+.success {
+  background: #d4edda;
+  color: #155724;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+.error {
+  background: #f8d7da;
+  color: #721c24;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+.details {
+  position: relative;
+  width: 100vw;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-gap: 20px;
+  margin: 0 auto;
+  //   align-items: center;
+  /* margin-top: 10px; */
+}
+
+.details .recentOrders {
+  position: relative;
+  // display: grid;
+  max-height: max-content;
+  width: 100%;
+  background: var(--white);
+  padding: 20px;
+  // box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 7px 15px var(--blue2);
+
+  border-radius: 20px;
+  margin: 25px;
+}
+
+// .recentOrders .cardHeader {
+//   margin-bottom: 5px;
+// }
+.details .cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.cardHeader h2 {
+  font-weight: 600;
+  color: var(--blue);
+}
+.cardHeader .btn {
+  position: relative;
+  padding: 5px 10px;
+  background: var(--blue);
+  text-decoration: none;
+  color: var(--white);
+  border-radius: 6px;
+}
+
+.user-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.form {
+  width: 100%;
+  //   max-width: 500px;
+  // background: var(--white);
+  padding: 0 20px;
+  border-radius: 10px;
+  min-height: fit-content;
+  //   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.form-control {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-control label {
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: var(--orange);
+}
+
+.form-control input,
+.form-control select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+  outline: none;
+  transition: border 0.3s;
+}
+
+.form-control input:focus,
+.form-control select:focus {
+  border-color: var(--blue);
+}
+
+.form-control button {
+   background: var(--blue);
+  color: var(--white);
+
+
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.form-control button:hover {
+   background: var(--orange);
+     color: var(--black1);
+}

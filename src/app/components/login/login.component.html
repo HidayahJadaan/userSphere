@@ -1,0 +1,201 @@
+<!-- <div class="login">
+  <div class="form">
+    <h1>Login User</h1>
+
+    <div class="success" *ngIf="loading">Verifying User ...</div>
+    <div class="error" *ngIf="error">{{ error }}</div>
+
+    <div class="form-control">
+      <label>Email Address: </label>
+      <input type="text" name="email" [(ngModel)]="email" />
+    </div>
+
+    <div class="form-control">
+      <label>Password: </label>
+      <input type="password" name="password" [(ngModel)]="password" />
+    </div>
+
+    <div class="form-control">
+      <button (click)="userLogin()">Login</button>
+    </div>
+
+   <div class="register-link">
+  <p>Don't have an account? 
+    <button (click)="navigateToRegister()">Register</button>
+  </p>
+</div>
+
+  </div>
+</div> -->
+<main class="login" [ngClass]="{ 'sign-up-mode': signUpMode }">
+  <div class="box">
+    <div class="inner-box">
+      <div class="forms-wrap">
+        <form action="index.html" autocomplete="off" class="sign-in-form">
+          <div class="logo">
+            <img src="./assets/imgs/logo.png" alt="easyclass" />
+            <h4>usersphere</h4>
+          </div>
+
+          <div class="heading">
+            <h2>Welcome Back</h2>
+            <h6>Not registered yet? </h6>
+            <span class="toggle" (click)="toggleSignUpMode()">Sign up</span>
+          </div>
+
+          <div class="actual-form">
+            <div class="success" *ngIf="loading">Verifying User ...</div>
+            <div class="error" *ngIf="error">{{ error }}</div>
+            <div class="input-wrap">
+              <input
+                type="text"
+                minlength="4"
+                name="email"
+                [(ngModel)]="email"
+                class="input-field"
+                autocomplete="off"
+                required
+                (focus)="onFocus($event)"
+                (blur)="onBlur($event)"
+              />
+              <label>Email</label>
+            </div>
+
+            <div class="input-wrap">
+              <input
+                type="password"
+                minlength="4"
+                class="input-field"
+                autocomplete="off"
+                required
+                (focus)="onFocus($event)"
+                (blur)="onBlur($event)"
+                name="password"
+                [(ngModel)]="password"
+              />
+              <label>Password</label>
+            </div>
+
+            <!-- <input type="submit" value="Sign In" class="sign-btn" /> -->
+            <button (click)="userLogin()" class="sign-btn">Login</button>
+            <p class="text">
+              Forgotten your password or login details?
+              <a href="#">Get help</a> signing in
+            </p>
+          </div>
+        </form>
+        <!-- ======================================================================== -->
+        <form
+          *ngIf="signUpMode"
+          action="index.html"
+          autocomplete="off"
+          class="sign-up-form"
+        >
+          <div class="logo">
+            <img src="./assets/imgs/logo.png" alt="easyclass" />
+            <h4>usersphere</h4>
+          </div>
+
+          <div class="heading">
+            <h2>Get Started</h2>
+            <h6>Already have an account?</h6>
+            <span class="toggle" (click)="toggleSignUpMode()">Sign in</span>
+          </div>
+
+          <div class="actual-form">
+            <div class="success" *ngIf="regSuccessMessage">
+              {{ regSuccessMessage }}
+            </div>
+            <div class="error" *ngIf="regErrorMessage">
+              {{ regErrorMessage }}
+            </div>
+
+            <div class="input-wrap">
+              <input
+                type="text"
+                minlength="4"
+                class="input-field"
+                autocomplete="off"
+                required
+                (focus)="onFocus($event)"
+                (blur)="onBlur($event)"
+                [(ngModel)]="regName"
+                name="regName"
+              />
+              <label>Name</label>
+            </div>
+
+            <div class="input-wrap">
+              <input
+                type="email"
+                class="input-field"
+                autocomplete="off"
+                required
+                (focus)="onFocus($event)"
+                (blur)="onBlur($event)"
+                [(ngModel)]="regEmail"
+                name="regEmail"
+              />
+              <label>Email</label>
+            </div>
+
+            <div class="input-wrap">
+              <input
+                type="password"
+                minlength="4"
+                class="input-field"
+                autocomplete="off"
+                required
+                (focus)="onFocus($event)"
+                (blur)="onBlur($event)"
+                [(ngModel)]="regPassword"
+                name="regPassword"
+              />
+              <label>Password</label>
+            </div>
+            <div class="input-wrap">
+              <select name="role" [(ngModel)]="regRole" class="input-field">
+                <option value="" disabled selected>Select Role</option>
+                <option value="Frontend Dev">Frontend Dev</option>
+                <option value="Backend Dev">Backend Dev</option>
+                <option value="Full Stack Dev">Full Stack Dev</option>
+              </select>
+            
+            </div>
+            <button (click)="registerUser()" class="sign-btn">Register</button>
+
+            <p class="text">
+              By signing up, I agree to the
+              <a href="#">Terms of Services</a> and
+              <a href="#">Privacy Policy</a>
+            </p>
+          </div>
+        </form>
+      </div>
+
+      <div class="carousel">
+        <div class="images-wrapper">
+          <img src="./assets/imgs/image1.png" class="image img-1 show" alt="" />
+          <img src="./assets/imgs/image2.png" class="image img-2" alt="" />
+          <img src="./assets/imgs/image3.png" class="image img-3" alt="" />
+        </div>
+
+        <div class="text-slider">
+          <div class="text-wrap">
+            <div class="text-group">
+              <h2>Create your own courses</h2>
+              <h2>Customize as you like</h2>
+              <h2>Invite students to your class</h2>
+            </div>
+          </div>
+
+          <div class="bullets">
+            <span class="active" (click)="moveSlider(1)"></span>
+            <span (click)="moveSlider(2)"></span>
+            <span (click)="moveSlider(3)"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

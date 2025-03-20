@@ -1,0 +1,98 @@
+<!-- <div class="page-head">
+  <h3>User Details</h3>
+
+  <div>
+    <a routerLink="/users/list">Users List</a>
+  </div>
+</div>
+
+<div class="user-details">
+  <div class="details-feilds">
+    <div>
+      <div class="success" *ngIf="loading">Getting User Details ...</div>
+      <div class="error" *ngIf="error">{{ error }}</div>
+    </div>
+
+    <div *ngIf="user && !loading">
+      <div class="form-control">
+        <label>Name: </label>
+        <span>{{ user.name }}</span>
+      </div>
+
+      <div class="form-control">
+        <label>Email Address: </label>
+
+        <span>{{ user.email }}</span>
+      </div>
+      <div class="form-control">
+        <label>Password: </label>
+        
+        <span>{{ user.password | hidePassword : "*" : 2 }}</span>
+      </div>
+
+      <div class="form-control">
+        <label>User Role: </label>
+
+        <span>{{ user.role }}</span>
+      </div>
+
+
+    </div>
+  </div>
+</div> -->
+
+<div class="main">
+  <div class="details">
+    <div class="recentOrders">
+      <div class="cardHeader">
+        <h2>User Details</h2>
+        <a routerLink="/users/list" class="btn">Users List</a>
+      </div>
+
+      <div class="user-form">
+        <div class="form">
+          <div class="profile-card d-flex gap-3 bg-white">
+            <div class="image text-center text-md-start">
+              <img
+                src="https://github.com/OlgaKoplik/CodePen/blob/master/profile.jpg?raw=true" 
+                class="object-fit-cover rounded-circle"
+                width="100px"
+              />
+            </div>
+            <div
+              class="card d-flex flex-column align-items-center align-items-md-start"
+            >
+              <h2 class="profile-name text-center text-md-start">
+                {{ user.name }}
+              </h2>
+              <span class="passion text-center text-md-start">{{
+                user.role
+              }}</span>
+              <div
+                class="stats d-flex align-items-center justify-content-center mb-3 text-center text-md-start"
+              >
+                <i class="bi bi-star-fill"></i> 4.7 Rating
+              </div>
+              <div
+                class="stats d-flex align-items-center justify-content-center mb-3 text-center text-md-start"
+              >
+                <i class="bi bi-award-fill"></i> 4,447 Reviews
+              </div>
+              <div
+                class="stats d-flex align-items-center justify-content-center mb-3 text-center text-md-start"
+              >
+                <i class="bi bi-people-fill"></i> 478 Students
+              </div>
+              <p class="mb-5 text-md-start">
+                David Grant has been making video games for a living for more
+                than 14 years as a Designer, Producer, Creative Director, and
+                Executive Producer, creating games for console, mobile, PC, and
+                Facebook.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
